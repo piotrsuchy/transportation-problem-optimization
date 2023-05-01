@@ -22,8 +22,6 @@ $ python gui.py
 
 ## DOCUMENTATION:
 
-29 pages of documentation for the initial stage of the project, together with certain performance tests were composed. 
-
-This project was created by a group of 3 people for a course in Operational Research. At the time of the initial commit for this repository (March) the contributions for the code were as follows: Paweł Szwarnowski 781/1420, Piotr Suchy 568/1420, Mateusz Sztefko 71/1420. After finishing the project, I (Piotr Suchy) have decided to expand on it and add certain features solo. WIP
+WIP for an engineering thesis. The branch engineering_thesis is just my solo work, taking what was already there in the project of 3 people.
 
 Piotr Suchy
