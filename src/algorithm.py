@@ -1,10 +1,10 @@
-from src.classes import Order, Truck, SolutionTuple, Graph, TruckType, CompleteSolution
+from classes import Order, Truck, SolutionTuple, Graph, TruckType, CompleteSolution
 from typing import List, Dict
 from random import randint, choice, shuffle, random, sample, randrange
 from copy import deepcopy
 import matplotlib.pyplot as plt
 import numpy as np
-
+from pathlib import Path
 
 def generate_solution(trucks_list: List[Truck], orders_list: List[Order], n_large_truck: int, n_small_truck: int, n_pop: int) -> List[CompleteSolution]:
     population = []
@@ -305,4 +305,5 @@ def visualise(best_eval_list, iteration_eval_list):
     plt.xlabel('Nr iteracji')
     plt.ylabel('Wartość funkcji celu')
     plt.tight_layout() 
-    plt.savefig('data/wykres_funkcji_celu.png', dpi = 100)
+    parent_dir = Path().cwd().parent
+    plt.savefig('{}/data/wykres_funkcji_celu.png'.format(parent_dir), dpi = 100)

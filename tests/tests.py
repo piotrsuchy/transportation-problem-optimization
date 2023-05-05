@@ -1,4 +1,4 @@
-from main import main
+import main
 from typing import List
 from random import sample
 import numpy as np

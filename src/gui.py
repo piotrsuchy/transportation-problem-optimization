@@ -10,7 +10,7 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import matplotlib.pyplot as plt
 import matplotlib
 matplotlib.use("TkAgg")
-import graph_visualisation
+import graph_visualisation as graph_visualisation
 
 
 integer_str_vars = ["SIMULATION_TIME", "capacity_l", "capacity_s",
@@ -25,8 +25,9 @@ proper_names_str = ["Simulation length (h)", "Number of rows and columns", "Min 
 
 
 cwd = Path().cwd()
-json_path = cwd / 'data' / 'variables.json'
-json_schema_path = cwd / 'data' / 'json_schema.json'
+parent_dir = cwd.parent
+json_path = parent_dir / 'data' / 'variables.json'
+json_schema_path = parent_dir / 'data' / 'json_schema.json'
 
 
 with open(json_schema_path) as jf:
@@ -162,8 +163,7 @@ ds_window = App()
 # save to json
 def save_json():
     # Write the dictionary to a JSON file
-    cwd = Path.cwd()
-    var_path = cwd / 'data' / 'variables.json'
+    var_path = parent_dir / 'data' / 'variables.json'
     with open(var_path, "w") as f:
         json.dump(variables, f, indent=2)
 
@@ -225,7 +225,7 @@ def validate_data_and_append(checked_value, structure_var):
 
 
 def create_struct():
-    import src.algorithm
+    import algorithm
     rows_cols = variables["structures_data"]["rows_cols"]
     low_adj_matrix = variables["structures_data"]["low_adj_matrix"]
     high_adj_matrix = variables["structures_data"]["high_adj_matrix"]
@@ -240,7 +240,7 @@ def create_struct():
     simulation_time = variables["structures_data"]['SIMULATION_TIME']
 
     global g, trucks_list, orders_lst
-    g, trucks_list, orders_lst = src.algorithm.create_structures(rows_cols, low_adj_matrix, high_adj_matrix, n_of_orders, max_pallets, n_small_trucks, n_large_trucks, capacity_s, speed_s, capacity_l, speed_l, simulation_time)
+    g, trucks_list, orders_lst = algorithm.create_structures(rows_cols, low_adj_matrix, high_adj_matrix, n_of_orders, max_pallets, n_small_trucks, n_large_trucks, capacity_s, speed_s, capacity_l, speed_l, simulation_time)
 
     old_stdout = sys.stdout
 
@@ -260,7 +260,7 @@ def show_plot():
     plot_window = tk.Tk()
     plot_window.geometry("800x600")
     plot_window.title("Results and Plot")
-    plot_path = cwd / 'data' / 'wykres_funkcji_celu.png'
+    plot_path = parent_dir / 'data' / 'wykres_funkcji_celu.png'
     plot_image = Image.open(plot_path)
     
     width = plot_window.winfo_screenwidth()
