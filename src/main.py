@@ -2,13 +2,14 @@ def main(g, trucks_list, orders_lst):
 
     import json
     from pathlib import Path
-    import src.algorithm as algorithm
-    from src.classes import Order, Truck
+    import algorithm as algorithm
+    from classes import Order, Truck
     from io import StringIO
     import sys
     
     cwd = Path().cwd()
-    json_path = cwd / 'data' / 'variables.json'
+    parent_dir = cwd.parent
+    json_path = parent_dir / 'data' / 'variables.json'
     with open(json_path) as f:
         variables = json.load(f)
 

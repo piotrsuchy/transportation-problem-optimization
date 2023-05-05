@@ -1,7 +1,7 @@
 import networkx as nx
 import numpy as np
 import matplotlib.pyplot as plt 
-from src.classes import Graph
+from classes import Graph
 from networkx.drawing.nx_agraph import graphviz_layout
     
 def graph_visualise(g):
