@@ -39,6 +39,6 @@ Approach the transportation problem optimization from a neural network, reinforc
 
 ## VISUALISATION OF THE REINFORCEMENT LEARNING ALGORITHM
 
-[Diagram of the network](media/RLA_ACTOR-CRITIC.png)
+![Diagram of the network](media/RLA_ACTOR-CRITIC.png)
 
 Piotr Suchy
