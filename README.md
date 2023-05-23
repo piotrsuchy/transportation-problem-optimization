@@ -37,5 +37,8 @@ Approach the transportation problem optimization from a neural network, reinforc
 
 5. Evaluate the performance: After the training is complete, test the performance of the trained agent on a set of test instances to see how well it has learned to solve the transportation problem.
 
+## VISUALISATION OF THE REINFORCEMENT LEARNING ALGORITHM
+
+[Diagram of the network](media/RLA_ACTOR-CRITIC.png)
 
 Piotr Suchy
